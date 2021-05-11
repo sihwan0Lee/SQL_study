@@ -2,7 +2,7 @@ SELECT
 
 "SQL에서 가장 많이 쓰이는 문장"
 
-"테이블에 저장된 데이터를 가져오는 데 쓰인다"
+"table에 저장된 데이터를 가져오는 데 쓰인다"
 
 "SQL문의 시작"
 
@@ -13,7 +13,7 @@ DISTINCT
 
 FROM
 
-"SELECT 를 해올 테이블 명을 지정한다"
+"SELECT 를 해올 table 명을 지정한다"
 
 WHERE
 
@@ -58,7 +58,7 @@ N(숫자)만큼의 행 리턴, N없으면 단 한건만 출력
 
 IN, NOT IN
 
-"특정 집합(컬럼 or 리스트)에서 특정 집합 혹은 리스트가 존재하는지 판단하는 연산자"
+"특정 집합(col or 리스트)에서 특정 집합 혹은 리스트가 존재하는지 판단하는 연산자"
 
 SELECT
 	*
@@ -77,13 +77,13 @@ WHERE COL_NAME IN
 	FROM
 	TABLE_NAME2)
 ;
-COL_NAME이 가지고 있는 집합에서, TABLE_NAME2테이블의 COL_NAME2의 집합이 존재하는지 확인
+COL_NAME이 가지고 있는 집합에서, TABLE_NAME2table의 COL_NAME2의 집합이 존재하는지 확인
 "IN은 OR,= 의 조합과 같고"
 "NOT IN은 AND,<>의 조합과 같다"
 
 BETWEEN, NOT BETWEEN
 
-"특정 집합에서 컬럼의 값이 특정 범위 안에 들어가는 집합을 출력"
+"특정 집합에서 col의 값이 특정 범위 안에 들어가는 집합을 출력"
 
 SELECT
 	CUSTOMER_ID, 
@@ -97,7 +97,7 @@ WHERE
 
 LIKE, NOT LIKE
 
-"컬럼의 값이 특정 값과 유사한 패턴을 갖는 집합을 출력한다"
+"col의 값이 특정 값과 유사한 패턴을 갖는 집합을 출력한다"
 " % 는 어떤 문자 혹은 문자열이든지 매칭 되었다고 판단"
 " _ 는 한 개의 문자가 어떤 문자이든지 매칭 되었다고 판단"
 
@@ -111,15 +111,15 @@ Jen 이후 문자 혹은 문자열은 모두 매칭 되어버린다
 " %er%, _her% 이런식으로 사용하면 된다"
 
 IS NULL, IS NOT NULL
-"특정 컬럼 혹은 값이 NULL인지 아닌지를 판단하는 연산자"
+"특정 col 혹은 값이 NULL인지 아닌지를 판단하는 연산자"
 
 SELECT *
 FROM TABLE_NAME
 WHERE COLUMN_NAME IS NULL;
-COLUNM_NAME 컬럼의 값이 널인 집합을 출력한다.
+COLUNM_NAME col의 값이 널인 집합을 출력한다.
 
 SELECT *
 FROM TABLE_NAME
 WHERE COLUMN_NAME IS NOT NULL;
-COLUNM_NAME 컬럼의 값이 널이 아닌 집합을 출력한다.
+COLUNM_NAME col의 값이 널이 아닌 집합을 출력한다.
 

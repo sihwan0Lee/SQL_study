@@ -1,0 +1,62 @@
+GROUP BY 절
+
+SELECT 문에서 반환된 행을 그룹으로 나눈다.
+각 그룹에 대한 합계, 평균, 카운트 등을 계산할 수 있다.
+
+SELECT
+COLUMN_1
+, 집계함수(COLUMN_2)
+FROM
+       TABLE_NAME
+GROUP BY COLUMN_1
+;
+
+N개의 col을 GROUPBY하는 경우‘,’구분 GROUP BY 절은 FROM 또는 WHERE절 바로 뒤에 나타나야 한다.
+
+ 중복 값이 제거된 CUSTOMER_ID를 구할 수 있다.
+
+
+HAVING 절
+
+HAVING 절은 GROUP BY 절에 의해 생성된 그룹행의 조건을 설정한다.
+반면에 WHERE 절은 GROUP BY 절이 적용되기 전에 개별 행의 조건을 설정한다.
+
+SELECT
+CUSTOMER_ID
+, SUM(AMOUNT) AS AMOUNT_SUM
+FROM
+       PAYMENT
+GROUP BY CUSTOMER_ID
+HAVING SUM(AMOUNT) > 200
+;
+
+
+ROLL UP 절
+
+AVG
+
+SELECT
+      B.GROUP_NAME
+    , AVG (PRICE)
+ FROM PRODUCT A
+INNER JOIN PRODUCT_GROUP B
+    ON (A.GROUP_ID = B.GROUP_ID)
+GROUP BY
+B.GROUP_NAME;
+
+
+
+
+정리
+
+SELECT col FROM table GROUP BY 그룹화할 col;
+
+SELECT col FROM table WHERE 조건식 GROUP BY 그룹화할 col;
+
+SELECT col FROM table GROUP BY 그룹화할 col HAVING 조건식;
+
+SELECT col FROM table WHERE 조건식 GROUP BY 그룹화할 col HAVING 조건식;
+
+SELECT col FROM table [WHERE 조건식]
+GROUP BY 그룹화할 col [HAVING 조건식] ORDER BY col1 [, col2, col3 ...];
+
