@@ -98,3 +98,59 @@ ORDER BY
 ## from, join에서 테이블을 명시하는 과정에서 뒤에 이름을 임의로 지정하고
 ## 그외에서는 이제 임의로 지정한 이름에 닷(.)을 통해서 접근을 하는 것이다.
 
+# 8. 이름에 el이 들어가는 동물 찾기
+
+동물 보호소에 들어온 동물 이름 중, 이름에 "EL"이 들어가는 개의 아이디와 이름을 조회하는 SQL문을 작성해주세요. 이때 결과는 이름 순으로 조회해주세요. 단, 이름의 대소문자는 구분하지 않습니다.
+
+SELECT
+    ANIMAL_ID, NAME
+FROM
+    ANIMAl_INS
+WHERE
+    NAME LIKE '%el%' AND ANIMAL_TYPE = 'Dog'
+
+ORDER BY NAME ;
+
+# WHERE 에서 IN으로 조건 추가 가능 하다는 점
+
+# 9. 최솟값 구하기
+동물 보호소에 가장 먼저 들어온 동물은 언제 들어왔는지 조회하는 SQL 문을 작성해주세요.
+
+풀이 1
+SELECT
+    datetime
+FROM
+    ANIMAL_INS
+ORDER BY
+    datetime 
+LIMIT
+    1
+    ;
+
+풀이 2
+
+SELECT
+    MIN(datetime)
+FROM
+    ANIMAL_INS
+;
+
+# 10. 동물 수 구하기
+
+동물 보호소에 동물이 몇 마리 들어왔는지 조회하는 SQL 문을 작성해주세요.
+
+SELECT
+    COUNT(ANIMAL_ID) as count
+FROM
+    ANIMAL_INS;
+
+
+# 11. 중복 제거하기
+
+동물 보호소에 들어온 동물의 이름은 몇 개인지 조회하는 SQL 문을 작성해주세요. 이때 이름이 NULL인 경우는 집계하지 않으며 중복되는 이름은 하나로 칩니다.
+SELECT
+    COUNT(DISTINCT(NAME))
+FROM
+    ANIMAL_INS
+WHERE
+    NAME IS NOT NULL;
