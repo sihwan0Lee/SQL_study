@@ -81,6 +81,18 @@ COL_NAME이 가지고 있는 집합에서, TABLE_NAME2table의 COL_NAME2의 집�
 "IN은 OR,= 의 조합과 같고"
 "NOT IN은 AND,<>의 조합과 같다"
 
+SELECT
+CUSTOMER_ID , RENTAL_ID
+, RETURN_DATE
+FROM RENTAL WHERE
+CUSTOMER_ID IN (1, 2)
+ORDER BY RETURN_DATE
+DESC;
+
+CUSTOMER_ID가 1 혹은 2인 행을 출력한다.
+그 결과를 RETURN_DATE 컬럼 내림차순으로 출력한다.
+
+
 BETWEEN, NOT BETWEEN
 
 "특정 집합에서 col의 값이 특정 범위 안에 들어가는 집합을 출력"
