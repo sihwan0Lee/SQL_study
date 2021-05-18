@@ -92,6 +92,15 @@ DESC;
 CUSTOMER_ID가 1 혹은 2인 행을 출력한다.
 그 결과를 RETURN_DATE 컬럼 내림차순으로 출력한다.
 
+SELECT
+CUSTOMER_ID , RENTAL_ID
+, RETURN_DATE
+FROM RENTAL WHERE
+CUSTOMER_ID NOT IN (1, 2)
+ORDER BY RETURN_DATE
+DESC;
+
+재밌는 점은 IN(1,2)는 1 또는 2를 다 출력하지만, NOT IN(1,2)는 1, 2 둘다 포함되지 않는다.
 
 BETWEEN, NOT BETWEEN
 
